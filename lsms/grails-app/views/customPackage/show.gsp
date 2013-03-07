@@ -32,15 +32,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${customPackageInstance?.price}">
-				<li class="fieldcontain">
-					<span id="price-label" class="property-label"><g:message code="customPackage.price.label" default="Price" /></span>
-					
-						<span class="property-value" aria-labelledby="price-label"><g:fieldValue bean="${customPackageInstance}" field="price"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${customPackageInstance?.customQuantity}">
 				<li class="fieldcontain">
 					<span id="customQuantity-label" class="property-label"><g:message code="customPackage.customQuantity.label" default="Custom Quantity" /></span>
@@ -50,11 +41,22 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${customPackageInstance?.price}">
+				<li class="fieldcontain">
+					<span id="price-label" class="property-label"><g:message code="customPackage.price.label" default="Price" /></span>
+					
+						<span class="property-value" aria-labelledby="price-label"><g:fieldValue bean="${customPackageInstance}" field="price"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${customPackageInstance?.resources}">
 				<li class="fieldcontain">
 					<span id="resources-label" class="property-label"><g:message code="customPackage.resources.label" default="Resources" /></span>
 					
-						<span class="property-value" aria-labelledby="resources-label"><g:link controller="resources" action="show" id="${customPackageInstance?.resources?.id}">${customPackageInstance?.resources?.encodeAsHTML()}</g:link></span>
+						<g:each in="${customPackageInstance.resources}" var="r">
+						<span class="property-value" aria-labelledby="resources-label"><g:link controller="resources" action="show" id="${r.id}">${r?.encodeAsHTML()}</g:link></span>
+						</g:each>
 					
 				</li>
 				</g:if>

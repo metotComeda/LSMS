@@ -26,11 +26,9 @@
 					
 						<g:sortableColumn property="packageName" title="${message(code: 'customPackage.packageName.label', default: 'Package Name')}" />
 					
-						<g:sortableColumn property="price" title="${message(code: 'customPackage.price.label', default: 'Price')}" />
-					
 						<g:sortableColumn property="customQuantity" title="${message(code: 'customPackage.customQuantity.label', default: 'Custom Quantity')}" />
 					
-						<th><g:message code="customPackage.resources.label" default="Resources" /></th>
+						<g:sortableColumn property="price" title="${message(code: 'customPackage.price.label', default: 'Price')}" />
 					
 					</tr>
 				</thead>
@@ -40,11 +38,9 @@
 					
 						<td><g:link action="show" id="${customPackageInstance.id}">${fieldValue(bean: customPackageInstance, field: "packageName")}</g:link></td>
 					
-						<td>${fieldValue(bean: customPackageInstance, field: "price")}</td>
-					
 						<td>${fieldValue(bean: customPackageInstance, field: "customQuantity")}</td>
 					
-						<td>${fieldValue(bean: customPackageInstance, field: "resources")}</td>
+						<td>${fieldValue(bean: customPackageInstance, field: "price")}</td>
 					
 					</tr>
 				</g:each>
