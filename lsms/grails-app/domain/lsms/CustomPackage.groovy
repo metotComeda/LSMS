@@ -13,4 +13,10 @@ class CustomPackage{
 		customQuantity(blank:false)
 		price()
     }
+	
+	static searchable = true
+	
+	String toString(){
+		"${packageName}"
+	}
 }
