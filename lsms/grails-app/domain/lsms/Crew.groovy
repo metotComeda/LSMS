@@ -1,8 +1,7 @@
 package lsms
 
 class Crew extends PersonInfo{
-
-	Date date;
+	
 	Job job;
 	
 	enum Job {
@@ -11,12 +10,7 @@ class Crew extends PersonInfo{
 	
     static constraints = {
 		job(blank:false)
-		date(blank:false)
     }
 	
 	static searchable = true
-	
-	String toString(){
-	"${info}"
-	}
 }

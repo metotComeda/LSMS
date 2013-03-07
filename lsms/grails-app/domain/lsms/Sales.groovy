@@ -1,9 +1,8 @@
-
 package lsms
 
 class Sales {
-	
-	static hasMany = [customPackage:CustomPackage]
+
+	static hasMany = [customer:Customer]
 
     static constraints = {
     }

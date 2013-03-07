@@ -24,8 +24,6 @@
 				<thead>
 					<tr>
 					
-						<g:sortableColumn property="personId" title="${message(code: 'personInfo.personId.label', default: 'Person Id')}" />
-					
 						<g:sortableColumn property="lastName" title="${message(code: 'personInfo.lastName.label', default: 'Last Name')}" />
 					
 						<g:sortableColumn property="firstName" title="${message(code: 'personInfo.firstName.label', default: 'First Name')}" />
@@ -34,21 +32,23 @@
 					
 						<g:sortableColumn property="contactNum" title="${message(code: 'personInfo.contactNum.label', default: 'Contact Num')}" />
 					
+						<g:sortableColumn property="date" title="${message(code: 'personInfo.date.label', default: 'Date')}" />
+					
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${personInfoInstanceList}" status="i" var="personInfoInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${personInfoInstance.id}">${fieldValue(bean: personInfoInstance, field: "personId")}</g:link></td>
-					
-						<td>${fieldValue(bean: personInfoInstance, field: "lastName")}</td>
+						<td><g:link action="show" id="${personInfoInstance.id}">${fieldValue(bean: personInfoInstance, field: "lastName")}</g:link></td>
 					
 						<td>${fieldValue(bean: personInfoInstance, field: "firstName")}</td>
 					
 						<td>${fieldValue(bean: personInfoInstance, field: "address")}</td>
 					
 						<td>${fieldValue(bean: personInfoInstance, field: "contactNum")}</td>
+					
+						<td><g:formatDate date="${personInfoInstance.date}" /></td>
 					
 					</tr>
 				</g:each>

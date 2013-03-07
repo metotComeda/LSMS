@@ -8,31 +8,20 @@
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
 	<body>
-	
-		<!-- <a href="#show-customer" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+		<a href="#show-customer" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
 				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 			</ul>
-		</div> -->
-		
+		</div>
 		<div id="show-customer" class="content scaffold-show" role="main">
 			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			<ol class="property-list customer">
-			
-				<g:if test="${customerInstance?.personId}">
-				<li class="fieldcontain">
-					<span id="personId-label" class="property-label"><g:message code="customer.personId.label" default="Person Id" /></span>
-					
-						<span class="property-value" aria-labelledby="personId-label"><g:fieldValue bean="${customerInstance}" field="personId"/></span>
-					
-				</li>
-				</g:if>
 			
 				<g:if test="${customerInstance?.lastName}">
 				<li class="fieldcontain">
@@ -70,15 +59,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${customerInstance?.email}">
-				<li class="fieldcontain">
-					<span id="email-label" class="property-label"><g:message code="customer.email.label" default="Email" /></span>
-					
-						<span class="property-value" aria-labelledby="email-label"><g:fieldValue bean="${customerInstance}" field="email"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${customerInstance?.date}">
 				<li class="fieldcontain">
 					<span id="date-label" class="property-label"><g:message code="customer.date.label" default="Date" /></span>
@@ -88,11 +68,38 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${customerInstance?.email}">
+				<li class="fieldcontain">
+					<span id="email-label" class="property-label"><g:message code="customer.email.label" default="Email" /></span>
+					
+						<span class="property-value" aria-labelledby="email-label"><g:fieldValue bean="${customerInstance}" field="email"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${customerInstance?.customPackage}">
 				<li class="fieldcontain">
 					<span id="customPackage-label" class="property-label"><g:message code="customer.customPackage.label" default="Custom Package" /></span>
 					
 						<span class="property-value" aria-labelledby="customPackage-label"><g:link controller="customPackage" action="show" id="${customerInstance?.customPackage?.id}">${customerInstance?.customPackage?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${customerInstance?.quantity}">
+				<li class="fieldcontain">
+					<span id="quantity-label" class="property-label"><g:message code="customer.quantity.label" default="Quantity" /></span>
+					
+						<span class="property-value" aria-labelledby="quantity-label"><g:fieldValue bean="${customerInstance}" field="quantity"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${customerInstance?.doneTransaction}">
+				<li class="fieldcontain">
+					<span id="doneTransaction-label" class="property-label"><g:message code="customer.doneTransaction.label" default="Done Transaction" /></span>
+					
+						<span class="property-value" aria-labelledby="doneTransaction-label"><g:formatBoolean boolean="${customerInstance?.doneTransaction}" /></span>
 					
 				</li>
 				</g:if>

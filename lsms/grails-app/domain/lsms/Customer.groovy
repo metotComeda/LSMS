@@ -3,20 +3,16 @@ package lsms
 class Customer extends PersonInfo{
 
 	String email;
-	Date date;
-	CustomPackage customPackage;
-	
-	static hasMany = [customPackage:CustomPackage]
+	CustomPackage customPackage
+	Integer quantity
+	boolean doneTransaction
 	
     static constraints = {
 		email(blank:false)
-		date(blank:false)
 		customPackage(blank:false)
+		quantity()
+		doneTransaction()
     }
 	
 	static searchable = true
-	
-	String toString(){
-	"${info}"
-	}
 }

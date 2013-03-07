@@ -8,46 +8,35 @@
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		
-		<!-- <div id="show-resources" class="content scaffold-show" role="main">
+		<a href="#show-resources" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+		<div class="nav" role="navigation">
+			<ul>
+				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+			</ul>
+		</div>
+		<div id="show-resources" class="content scaffold-show" role="main">
 			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<ol class="property-list resources"> -->
+			<ol class="property-list resources">
 			
-				<g:if test="${resourcesInstance?.detergent}">
+				<g:if test="${resourcesInstance?.name}">
 				<li class="fieldcontain">
-					<span id="detergent-label" class="property-label"><g:message code="resources.detergent.label" default="Detergent" /></span>
+					<span id="name-label" class="property-label"><g:message code="resources.name.label" default="Name" /></span>
 					
-						<span class="property-value" aria-labelledby="detergent-label"><g:fieldValue bean="${resourcesInstance}" field="detergent"/></span>
+						<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${resourcesInstance}" field="name"/></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${resourcesInstance?.detergentCount}">
+				<g:if test="${resourcesInstance?.quantity}">
 				<li class="fieldcontain">
-					<span id="detergentCount-label" class="property-label"><g:message code="resources.detergentCount.label" default="Detergent Count" /></span>
+					<span id="quantity-label" class="property-label"><g:message code="resources.quantity.label" default="Quantity" /></span>
 					
-						<span class="property-value" aria-labelledby="detergentCount-label"><g:fieldValue bean="${resourcesInstance}" field="detergentCount"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${resourcesInstance?.fabCon}">
-				<li class="fieldcontain">
-					<span id="fabCon-label" class="property-label"><g:message code="resources.fabCon.label" default="Fab Con" /></span>
-					
-						<span class="property-value" aria-labelledby="fabCon-label"><g:fieldValue bean="${resourcesInstance}" field="fabCon"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${resourcesInstance?.fabConCount}">
-				<li class="fieldcontain">
-					<span id="fabConCount-label" class="property-label"><g:message code="resources.fabConCount.label" default="Fab Con Count" /></span>
-					
-						<span class="property-value" aria-labelledby="fabConCount-label"><g:fieldValue bean="${resourcesInstance}" field="fabConCount"/></span>
+						<span class="property-value" aria-labelledby="quantity-label"><g:fieldValue bean="${resourcesInstance}" field="quantity"/></span>
 					
 				</li>
 				</g:if>

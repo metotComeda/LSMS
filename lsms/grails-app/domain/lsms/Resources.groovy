@@ -1,18 +1,16 @@
 package lsms
 
 class Resources {
-	
-	String Detergent;
-	String FabCon;
-	int DetergentCount;
-	int FabConCount;
-	
-	static belongsTo = [Inventory]
-	
+
+	String name
+	Integer quantity
+
     static constraints = {
-		detergent(blank:false)
-		detergentCount(blank:false)
-		fabCon(blank:false)
-		fabConCount(blank:false)
+		name(blank:false)
+		quantity(blank:false)
     }
+	
+	String toString(){
+		"${name}"
+	}
 }

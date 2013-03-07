@@ -23,15 +23,6 @@
 			</g:if>
 			<ol class="property-list personInfo">
 			
-				<g:if test="${personInfoInstance?.personId}">
-				<li class="fieldcontain">
-					<span id="personId-label" class="property-label"><g:message code="personInfo.personId.label" default="Person Id" /></span>
-					
-						<span class="property-value" aria-labelledby="personId-label"><g:fieldValue bean="${personInfoInstance}" field="personId"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${personInfoInstance?.lastName}">
 				<li class="fieldcontain">
 					<span id="lastName-label" class="property-label"><g:message code="personInfo.lastName.label" default="Last Name" /></span>
@@ -64,6 +55,15 @@
 					<span id="contactNum-label" class="property-label"><g:message code="personInfo.contactNum.label" default="Contact Num" /></span>
 					
 						<span class="property-value" aria-labelledby="contactNum-label"><g:fieldValue bean="${personInfoInstance}" field="contactNum"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${personInfoInstance?.date}">
+				<li class="fieldcontain">
+					<span id="date-label" class="property-label"><g:message code="personInfo.date.label" default="Date" /></span>
+					
+						<span class="property-value" aria-labelledby="date-label"><g:formatDate date="${personInfoInstance?.date}" /></span>
 					
 				</li>
 				</g:if>

@@ -1,35 +1,20 @@
 <%@ page import="lsms.Resources" %>
 
 
-<div class="fieldcontain ${hasErrors(bean: resourcesInstance, field: 'detergent', 'error')} required">
-	<label for="detergent">
-		<g:message code="resources.detergent.label" default="Detergent" />
+
+<div class="fieldcontain ${hasErrors(bean: resourcesInstance, field: 'name', 'error')} required">
+	<label for="name">
+		<g:message code="resources.name.label" default="Name" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="detergent" required="" value="${resourcesInstance?.detergent}"/>
+	<g:textField name="name" required="" value="${resourcesInstance?.name}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: resourcesInstance, field: 'detergentCount', 'error')} required">
-	<label for="detergentCount">
-		<g:message code="resources.detergentCount.label" default="Detergent Count" />
+<div class="fieldcontain ${hasErrors(bean: resourcesInstance, field: 'quantity', 'error')} required">
+	<label for="quantity">
+		<g:message code="resources.quantity.label" default="Quantity" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:field type="number" name="detergentCount" required="" value="${resourcesInstance.detergentCount}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: resourcesInstance, field: 'fabCon', 'error')} required">
-	<label for="fabCon">
-		<g:message code="resources.fabCon.label" default="Fab Con" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="fabCon" required="" value="${resourcesInstance?.fabCon}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: resourcesInstance, field: 'fabConCount', 'error')} required">
-	<label for="fabConCount">
-		<g:message code="resources.fabConCount.label" default="Fab Con Count" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field type="number" name="fabConCount" required="" value="${resourcesInstance.fabConCount}"/>
+	<g:field type="number" name="quantity" required="" value="${resourcesInstance.quantity}"/>
 </div>
 

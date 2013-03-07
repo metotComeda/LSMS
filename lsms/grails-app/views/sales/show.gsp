@@ -23,12 +23,12 @@
 			</g:if>
 			<ol class="property-list sales">
 			
-				<g:if test="${salesInstance?.customPackage}">
+				<g:if test="${salesInstance?.customer}">
 				<li class="fieldcontain">
-					<span id="customPackage-label" class="property-label"><g:message code="sales.customPackage.label" default="Custom Package" /></span>
+					<span id="customer-label" class="property-label"><g:message code="sales.customer.label" default="Customer" /></span>
 					
-						<g:each in="${salesInstance.customPackage}" var="c">
-						<span class="property-value" aria-labelledby="customPackage-label"><g:link controller="customPackage" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></span>
+						<g:each in="${salesInstance.customer}" var="c">
+						<span class="property-value" aria-labelledby="customer-label"><g:link controller="customer" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></span>
 						</g:each>
 					
 				</li>

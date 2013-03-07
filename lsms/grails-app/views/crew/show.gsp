@@ -4,26 +4,24 @@
 <html>
 	<head>
 		<meta name="layout" content="main">
-		 <g:set var="entityName" value="${message(code: 'crew.label', default: 'Crew')}" />
+		<g:set var="entityName" value="${message(code: 'crew.label', default: 'Crew')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		
+		<a href="#show-crew" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+		<div class="nav" role="navigation">
+			<ul>
+				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+			</ul>
+		</div>
 		<div id="show-crew" class="content scaffold-show" role="main">
 			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			<ol class="property-list crew">
-			
-				<g:if test="${crewInstance?.personId}">
-				<li class="fieldcontain">
-					<span id="personId-label" class="property-label"><g:message code="crew.personId.label" default="Person Id" /></span>
-					
-						<span class="property-value" aria-labelledby="personId-label"><g:fieldValue bean="${crewInstance}" field="personId"/></span>
-					
-				</li>
-				</g:if>
 			
 				<g:if test="${crewInstance?.lastName}">
 				<li class="fieldcontain">
@@ -61,20 +59,20 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${crewInstance?.job}">
-				<li class="fieldcontain">
-					<span id="job-label" class="property-label"><g:message code="crew.job.label" default="Job" /></span>
-					
-						<span class="property-value" aria-labelledby="job-label"><g:fieldValue bean="${crewInstance}" field="job"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${crewInstance?.date}">
 				<li class="fieldcontain">
 					<span id="date-label" class="property-label"><g:message code="crew.date.label" default="Date" /></span>
 					
 						<span class="property-value" aria-labelledby="date-label"><g:formatDate date="${crewInstance?.date}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${crewInstance?.job}">
+				<li class="fieldcontain">
+					<span id="job-label" class="property-label"><g:message code="crew.job.label" default="Job" /></span>
+					
+						<span class="property-value" aria-labelledby="job-label"><g:fieldValue bean="${crewInstance}" field="job"/></span>
 					
 				</li>
 				</g:if>

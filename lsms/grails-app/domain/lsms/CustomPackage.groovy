@@ -1,21 +1,14 @@
 package lsms
 
-class CustomPackage {
+class CustomPackage{
 
-	String packageId;
-	Resources resources;
-	Double price;
-	
-	static belongsTo = [Customer]
-	static hasMany = [resources:Resources]
+	Resources resources
+	Integer customQuantity
+	String packageName
+	Double price
 
     static constraints = {
-		packageId(blank:false, unique:true)
-		resources(blank:false)
-		price(blank:false)
+		packageName(blank:false)
+		price()
     }
-	
-	String toString(){
-	"${packageId} ${price}"
-	}
 }

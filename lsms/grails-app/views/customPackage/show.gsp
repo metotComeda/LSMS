@@ -8,7 +8,14 @@
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		
+		<a href="#show-customPackage" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+		<div class="nav" role="navigation">
+			<ul>
+				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+			</ul>
+		</div>
 		<div id="show-customPackage" class="content scaffold-show" role="main">
 			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">
@@ -16,20 +23,11 @@
 			</g:if>
 			<ol class="property-list customPackage">
 			
-				<g:if test="${customPackageInstance?.packageId}">
+				<g:if test="${customPackageInstance?.packageName}">
 				<li class="fieldcontain">
-					<span id="packageId-label" class="property-label"><g:message code="customPackage.packageId.label" default="Package Id" /></span>
+					<span id="packageName-label" class="property-label"><g:message code="customPackage.packageName.label" default="Package Name" /></span>
 					
-						<span class="property-value" aria-labelledby="packageId-label"><g:fieldValue bean="${customPackageInstance}" field="packageId"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${customPackageInstance?.resources}">
-				<li class="fieldcontain">
-					<span id="resources-label" class="property-label"><g:message code="customPackage.resources.label" default="Resources" /></span>
-					
-						<span class="property-value" aria-labelledby="resources-label"><g:link controller="resources" action="show" id="${customPackageInstance?.resources?.id}">${customPackageInstance?.resources?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="packageName-label"><g:fieldValue bean="${customPackageInstance}" field="packageName"/></span>
 					
 				</li>
 				</g:if>
@@ -39,6 +37,24 @@
 					<span id="price-label" class="property-label"><g:message code="customPackage.price.label" default="Price" /></span>
 					
 						<span class="property-value" aria-labelledby="price-label"><g:fieldValue bean="${customPackageInstance}" field="price"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${customPackageInstance?.customQuantity}">
+				<li class="fieldcontain">
+					<span id="customQuantity-label" class="property-label"><g:message code="customPackage.customQuantity.label" default="Custom Quantity" /></span>
+					
+						<span class="property-value" aria-labelledby="customQuantity-label"><g:fieldValue bean="${customPackageInstance}" field="customQuantity"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${customPackageInstance?.resources}">
+				<li class="fieldcontain">
+					<span id="resources-label" class="property-label"><g:message code="customPackage.resources.label" default="Resources" /></span>
+					
+						<span class="property-value" aria-labelledby="resources-label"><g:link controller="resources" action="show" id="${customPackageInstance?.resources?.id}">${customPackageInstance?.resources?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>
